@@ -7,8 +7,8 @@ export const ATHLETE = {
   height: "6'0\"",
   startingWeight: 155,
   goalWeight: 178, // lean bulk target
-  location: "The Xavier, Chicago",
-  role: "Lead Enterprise AM @ Beagle",
+  location: "Chicago",
+  role: "",
 };
 
 export const PROGRAM_START = "2026-05-25"; // Monday

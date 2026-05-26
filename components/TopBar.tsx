@@ -29,7 +29,7 @@ export default function TopBar() {
             DG
           </div>
           <div>
-            <div className="font-display text-lg leading-none">DELTA GRIND</div>
+            <div className="font-display text-lg leading-none">DAVID GOGGINS</div>
             <div className="text-[10px] uppercase tracking-widest text-ink-400 mt-0.5">
               Triathlon · Strength · 24wk
             </div>

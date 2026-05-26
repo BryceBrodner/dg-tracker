@@ -81,7 +81,7 @@ export default function Hero() {
               {ATHLETE.name.toUpperCase()}
             </div>
             <div className="text-ink-300 text-sm mt-1">
-              {ATHLETE.location} · {ATHLETE.role}
+              {ATHLETE.location}{ATHLETE.role ? ` · ${ATHLETE.role}` : ""}
             </div>
           </div>
 
