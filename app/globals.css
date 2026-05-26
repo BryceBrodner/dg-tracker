@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+:root {
+  --font-display: "Bebas Neue", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+html,
+body {
+  background: #070809;
+  color: #e6e9ef;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Grain overlay for that Whoop-grade depth */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Ambient gradient */
+body::after {
+  content: "";
+  position: fixed;
+  top: -20%;
+  left: -10%;
+  width: 60%;
+  height: 60%;
+  background: radial-gradient(circle, rgba(34, 227, 216, 0.08), transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Inputs */
+.input-yellow {
+  @apply bg-ink-800 border border-ink-600 rounded-md px-3 py-2 text-ink-100 placeholder-ink-400 focus:outline-none focus:border-accent-lime focus:ring-1 focus:ring-accent-lime/30 font-mono text-sm w-full;
+}
+
+.btn-primary {
+  @apply bg-accent-lime text-ink-950 font-semibold px-4 py-2 rounded-md hover:bg-accent-lime/90 transition uppercase tracking-wider text-xs;
+}
+
+.btn-ghost {
+  @apply border border-ink-600 text-ink-200 px-4 py-2 rounded-md hover:bg-ink-800 transition uppercase tracking-wider text-xs;
+}
+
+.card {
+  @apply bg-ink-900 border border-ink-700/60 rounded-2xl shadow-card;
+}
+
+.card-elev {
+  @apply bg-gradient-to-br from-ink-800 to-ink-900 border border-ink-700/60 rounded-2xl shadow-card;
+}
+
+.metric-label {
+  @apply text-[10px] uppercase tracking-[0.18em] text-ink-400 font-semibold;
+}
+
+.metric-value {
+  @apply font-display text-4xl text-ink-100 leading-none;
+}
+
+/* Subtle scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0c0e10;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2f38;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a414c;
+}
+
+/* Phase ring animation */
+@keyframes pulse-ring {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+.pulse-ring {
+  animation: pulse-ring 2.4s ease-in-out infinite;
+}
